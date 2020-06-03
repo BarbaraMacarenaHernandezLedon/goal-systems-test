@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Elementos almacenados";
+    var items = ViewData["items"] as List<client.Models.Item>;
+}
+<h5 class="center-align">@ViewData["Title"]</h5>
+
+
+@{ if (items != null)
+    {
+        <div class="row">
+            <table class="striped centered">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Fecha de caducidad</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @{ foreach (var i in items)
+                        {
+                            <tr>
+                                <td>@i.Name</td>
+                                <td>@i.Type</td>
+                                <td>@i.ExpirationDate.ToString("d")</td>
+                                <td>
+                                    <a asp-area="" asp-controller="Client" asp-action="Remove" asp-route-itemid="@i.Id">
+                                        <i class="material-icons deep-orange-text text-accent-3">remove_circle_outline</i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col s12 m4 center-align push-m4">
+                <div class="card-panel teal deep-orange darken-2">
+                    <span class="white-text">
+                        El inventario está vacío.
+                    </span>
+                </div>
+            </div>
+        </div>
+    }
+}

@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Notificaciones";
+    var notifications = ViewData["notifications"] as List<client.Models.Notifications>;
+}
+<h5 class="center-align">@ViewData["Title"]</h5>
+
+
+@{ if (notifications != null)
+    {
+        <div class="row">
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Tipo</th>
+                        <th>Date</th>
+                        <th>Item Id</th>
+                        <th>Item Name</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @{ foreach (var not in notifications)
+                        {
+                            <tr>
+                                <td>
+                                    @{
+                                        if (not.Type == "remove")
+                                        {
+                                            <i class="material-icons">cancel</i>
+                                        }
+                                        else
+                                        {
+                                            <i class="material-icons">event_busy</i>
+                                        }
+                                    }
+                                </td>
+                                <td>@not.Type</td>
+                                <td>@not.NotificationDate.ToString("d")</td>
+                                <td>@not.Item.Id</td>
+                                <td>@not.Item.Name</td>
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col s12 m4 center-align push-m4">
+                <div class="card-panel teal deep-orange darken-2">
+                    <span class="white-text">
+                        No hay notificationes.
+                    </span>
+                </div>
+            </div>
+        </div>
+    }
+}

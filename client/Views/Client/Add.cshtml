@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Añade un nuevo elemento";
+    var errorMessage = ViewData["errorMessage"];
+}
+<h5 class="center-align">@ViewData["Title"]</h5>
+
+<div class="row">
+    <div class="col l6 offset-l3">
+        @if (errorMessage != null)
+        {
+            <p class="center-align red-text text-accent-4">@errorMessage</p>
+        }
+        <div class="card horizontal">
+            <div class="card-stacked">
+                <form class="col s12" method="POST">
+                    <div class="card-content">
+                        <div class="row">
+                            <div class="input-field w-100">
+                                <input placeholder="Nombre" id="name" name="name" type="text" class="validate" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field w-100">
+                                <input placeholder="Tipo" id="type" name="type" type="text" class="validate" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field w-100">
+                                <input placeholder="Fecha de caducidad" name="expirationDate" id="expirationDate" type="text" class="datepicker" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-action valign-wrapper">
+                        <button class="btn waves-effect waves-light right" type="submit" name="action">
+                            Agregar
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.datepicker');
+        var instances = M.Datepicker.init(elems);
+    });
+</script>

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "XwYwCYV/vR3/K22d5Gp3uuEIowUYtLU4B9obz1cjL07TFEO+ljeEvhCv238/2isJ1g/bUV+lSWoj/Pr+8KBUXw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\barba\\OneDrive\\Escritorio\\inventario\\inventario.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\barba\\.nuget\\packages\\ncrontab\\3.3.1\\ncrontab.3.3.1.nupkg.sha512",
+    "C:\\Users\\barba\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}
