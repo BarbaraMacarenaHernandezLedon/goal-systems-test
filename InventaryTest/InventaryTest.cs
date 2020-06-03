@@ -190,5 +190,21 @@ namespace InventaryTest
             Assert.AreEqual(deleteItem.StatusCode, 400);
             Assert.AreEqual(deleteItem.Value, "Para que elemento sea eliminado es necesario el id del mismo");
         }
+
+        [TestMethod]
+        public void TestGetAllNotifications()
+        {
+            // Given
+            var mockNotificationRepository = new Mock<INotificationRepository>();
+            var controller = new InventaryController(null, mockNotificationRepository.Object);
+
+            // When
+            IActionResult result = controller.GetAllNotification();
+            var getNotifications = result as OkObjectResult;
+
+            //Then
+            Assert.IsNotNull(getNotifications);
+            Assert.AreEqual(getNotifications.StatusCode, 200);
+        }
     }
 }
