@@ -4,19 +4,19 @@ Proyecto que contiene un API REST y un cliente utilizando MaterializeCss desarro
 Este repositorio contiene el código de un inventario al que puedes añadir o eliminar elementos, además de enviar notificaciones a otros procesos con respecto a eventualidades sobre el mismo.
 
 # Instrucciones de ejecución
-  1- Clonar el repositorio (https://github.com/BarbaraMacarenaHernandezLedon/goal-systems-test.git).
-  2- Abrir en Visual Studio la solucion goal-systems-test.inventario.inventario.csproj y ejecutar la misma.
-    Una vez ejecutada la solución, se podrá acceder al API a través de: "http://localhost:5000"
-  3- Abrir en Visual Studio la solucion goal-systems-test.inventario.client.csproj y ejecutar la misma. (Esta solución no se ejecutará si el paso anterior no se cumple).
-  4- Al ejecutar la solucion client, se abrira en tu navegador predeterminado la url: "https://localhost:5003" donde podrás navegar en tres pestañas distintas, una contiene el contenido del inventario, otra te permitirá agregar elementos y la última mostrará las notificaciones que se generen en el sistema.
+  1. Clonar el repositorio (https://github.com/BarbaraMacarenaHernandezLedon/goal-systems-test.git).
+  2. Abrir en Visual Studio la solucion goal-systems-test.inventario.inventario.csproj y ejecutar la misma.
+     Una vez ejecutada la solución, se podrá acceder al API a través de: "http://localhost:5000"
+  3. Abrir en Visual Studio la solucion goal-systems-test.inventario.client.csproj y ejecutar la misma. (Esta solución no se ejecutará        si el paso anterior no se cumple).
+  4. Al ejecutar la solucion client, se abrira en tu navegador predeterminado la url: "https://localhost:5003" donde podrás navegar en        tres pestañas distintas, una contiene el contenido del inventario, otra te permitirá agregar elementos y la última mostrará las          notificaciones que se generen en el sistema.
 
 # Instrucciones de uso
   
   Los distintos endpoints con los que cuenta el API son:
-  GET http://localhost:5000/api/inventary -> Devuelve todos los elementos del inventario.
-  GET http://localhost:5000/api/inventary/{itemId} -> Devuelve el elemento solicitado.
-  DELETE http://localhost:5000/api/inventary/{itemId} -> Saca el el elemento indicado del inventario.
-  POST http://localhost:5000/api/inventary/ 
+  - GET http://localhost:5000/api/inventary -> Devuelve todos los elementos del inventario.
+  - GET http://localhost:5000/api/inventary/{itemId} -> Devuelve el elemento solicitado.
+  - DELETE http://localhost:5000/api/inventary/{itemId} -> Saca el el elemento indicado del inventario.
+  - POST http://localhost:5000/api/inventary/ 
   Enviando en el body de la petición el elemento que se desea agregar de la siguiente manera:
     {"name" : "elemento",
     "type" : "tipo de elemento",
@@ -24,7 +24,7 @@ Este repositorio contiene el código de un inventario al que puedes añadir o el
     }
     Donde "expirationdate" tiene este formato 2022-06-15T13:45:30.
   -> Agrega el elemento al inventario.
-  GET http://localhost:5000/api/inventary/notifications -> Devuelve todas las notificaciones del inventario.
+  - GET http://localhost:5000/api/inventary/notifications -> Devuelve todas las notificaciones del inventario.
 
   La ruta para cambiar el tiempo de ejecución de la tarea en segundo plano que revisa los elementos caducados:
   (Actualmente se ejecuta todos los dias a las 3:00h)
